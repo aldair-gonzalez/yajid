@@ -1,0 +1,87 @@
+.Footer {
+    background: $color-negro;
+    color: $color-blanco;
+    
+    width: 100%;
+    padding: $margin-cards-xxl 0;
+    overflow: hidden;
+    &-wrapper {
+    }
+    &-div {
+        width: 100%;
+        
+        @include flex(row, nowrap, space-between, flex-start);
+        gap: $margin-cards-xl;
+    }
+    &-content {
+        @include flex(row, wrap, flex-start, flex-start);
+        gap: $margin-cards-xxl;
+        // gap: 9rem;
+    }
+    &-list {
+        // letter-spacing: 1px;
+        font: {
+            family: $font-primary;
+            size: $font-size-xxs;
+        }
+        @include flex(column, nowrap, flex-start, flex-start);
+    }
+    &-name {
+        text-transform: uppercase;
+
+    }
+    &-li {
+        padding: .5rem 0;
+        font: {
+            weight: 300;
+        }
+    }
+    &-a {
+        color: $color-blanco-5;
+        &:hover {
+            color: $color-blanco;
+        }
+    }
+    &-rdss {
+        @include flex(row, nowrap, flex-end, flex-end);
+        gap: $margin-cards-m;
+        &Li {
+            color: $color-blanco-8;
+        }
+        &A {
+            &:hover {
+                color: $color-blanco;
+            }
+        }
+        &Svg {
+            width: $margin-cards-m;
+            height: $margin-cards-m;
+        }
+    }
+    &-bottom {
+        width: 100%;
+        margin-top: $margin-cards-xxl;
+        padding-top: $margin-cards-xxs;
+        border-top: 1px solid $color-gris-3;
+        overflow: hidden;
+    }
+    &-p {
+        color: $color-gris-5;
+        letter-spacing: 1px;
+        font: {
+            family: $font-primary;
+            weight: 300;
+            size: $font-size-xxs;
+        }
+    }
+
+    @include media(450px) {
+        padding: $margin-cards-s 0;
+        &-div {
+            @include flex(column, nowrap, flex-start, flex-start);
+        }
+        &-p {
+            text-align: center;
+        }
+    }
+}

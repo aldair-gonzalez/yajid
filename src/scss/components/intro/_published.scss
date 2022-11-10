@@ -1,0 +1,84 @@
+.Published {
+    width: 100%;
+    &-wrapper {
+        overflow: hidden;
+    }
+    &-grid {
+        width: 100%;
+        @include grid(2, 0);
+        border: 2px solid $color-negro;
+    }
+    &-item {
+        width: 100%;
+        height: 45rem;
+        overflow: hidden;
+
+        @include flex(column, nowrap, center, flex-start);
+
+        &--right {
+            border-right: 1px solid $color-negro;
+            padding: 4rem;
+        }
+        &--left {
+            border-left: 1px solid $color-negro;
+        }
+    }
+    &-p {
+        width: 100%;
+
+        font: {
+            family: $font-primary;
+            weight: 300;
+            size: $font-size-l;
+        }
+    }
+    &-button {
+        margin-top: 3rem;
+        padding: .5rem 0;
+
+        border-bottom: 2px solid $color-negro;
+
+        overflow: hidden;
+        cursor: pointer;
+        font: {
+            weight: 500;
+            size: $font-size-m;
+        }
+
+        @include flex(row, nowrap, center, center);
+    }
+    &-svg {
+        width: 4rem;
+        height: 4rem;
+    }
+    &-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @include media(850px) {
+        &-grid {
+            @include grid(1, 0);
+        }
+        &-item {
+            height: auto;
+            &--right {
+                border: none;
+                border-bottom: 1px solid $color-negro;
+            }
+            &--left {
+                height: 25rem;
+                border: none;
+                border-top: 1px solid $color-negro;
+            }
+        }
+    }
+    @include media(425px) {
+        &-p {
+            font: {
+                size: $font-size-m;
+            }
+        }
+    }
+}

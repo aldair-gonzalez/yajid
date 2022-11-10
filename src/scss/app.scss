@@ -1,0 +1,23 @@
+// Importando el reseteo general de la pagina
+@import './root/variables';
+@import './root/mixin';
+@import './root/root';
+
+
+@import './components/navbar/navbar';
+@import './components/navbar/drawerCart';
+
+
+@import './components/intro/intro';
+@import './components/intro/packets';
+@import './components/intro/published';
+@import './components/intro/insta';
+
+@import './components/slideCards/slideCards';
+
+@import './components/textAnimated/textAnimated';
+
+
+@import './components/footer/footer';
+
+@import './root/reset';

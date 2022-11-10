@@ -1,0 +1,91 @@
+.Header {
+    background: $color-blanco;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    
+    &.active {
+        .Header-title {
+            padding: 0;
+            overflow: hidden;
+            font-size: 0;
+        }
+    }
+
+    &-title {
+        background: $color-negro;
+        color: $color-rojo;
+        width: 100%;
+        padding: .5rem;
+        text-align: center;
+        font: {
+            weight: 900;
+            size: $font-size-s;
+        }
+        letter-spacing: .1rem;
+
+        transition:
+            padding .2s ease-in-out,
+            font-size .2s ease-in-out,
+        ;
+    }
+    &-icons {
+        width: 100%;
+        border-top: 1px solid $color-negro;
+        border-bottom: 1px solid $color-negro;
+    }
+    &-wrapper {
+        @include grid(3,0);
+    }
+    &-icon {
+        width: 100%;
+        @include flex(row, nowrap, flex-start, center);
+        &--end {
+            @include flex(row, nowrap, flex-end, center);
+        }
+    }
+    &-button {
+        cursor: pointer;
+        
+        @include flex(row, nowrap, flex-end, flex-end);
+        &Svg {
+            width: 3rem;
+            height: 3rem;
+            &--cart {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+    }
+    &-counter {
+        font: {
+            weight: 700;
+            size: $font-size-xs;
+        }
+    }
+    &-logo {
+        width: 100%;
+        padding: .5rem 0;
+        @include flex(row, wrap, center, center);
+        &Link {
+            @include flex(row, wrap, center, center);
+        }
+        &Img {
+            object-fit: contain;
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+
+
+    @include media(550px) {
+        &-logo {
+            &Img {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,123 @@
+.Products {
+    width: 100%;
+    &-wrapper {
+        overflow: hidden;
+
+        @include flex(column, nowrap, flex-start, flex-start);
+    }
+    &-header {
+        @include flex(row, nowrap, flex-start, center);
+    }
+    &-title {
+        color: $color-negro-5;
+        text-transform: uppercase;
+        border-bottom: 1rem solid $color-negro-5;
+        font: {
+            family: $font-primary;
+            weight: 900;
+            size: $font-size-l;
+        }
+    }
+    
+    @include media(550px) {
+        &-title {
+            font: {
+                size: $font-size-m;
+            }
+        }
+    }
+}
+
+
+.Cards {
+    @include flex(row, nowrap, flex-start, flex-start);
+    gap: $margin-cards-m;
+    cursor: grab;
+
+    &.isGrabbing {
+        cursor: grabbing;
+    }
+    
+    &-item {
+        background: $color-blanco;
+        width: 30rem;
+        height: 50rem;
+
+        @include flex(column, nowrap, flex-start, flex-start);
+    }
+    &-imagen {
+        width: 100%;
+        height: 75%;
+        overflow: hidden;
+        border-bottom: 2px solid $color-negro;
+        pointer-events: none;
+    }
+    &-img {
+        object-fit: contain;
+    }
+    &-info {
+        width: 100%;
+        height: 25%;
+        padding: 1rem;
+        position: relative;
+    }
+    &-title {
+        @include flex(column, nowrap, center, flex-start);
+        gap: .5rem;
+    }
+    &-name {
+        font: {
+            weight: 500;
+            size: $font-size-s;
+        }
+    }
+    &-description {
+        color: $color-negro-8;
+        font: {
+            weight: 400;
+            size: $font-size-xxs;
+        };
+    }
+    &-price {
+        background: $color-blanco;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: .5rem;
+        &Sign {
+            font: {
+                weight: 700;
+                size: $font-size-s;
+            }
+        }
+        &Value {
+            font: {
+                weight: 900;
+                size: $font-size-s;
+            }
+        }
+        &Currency {
+            font: {
+                weight: 400;
+                size: $font-size-xs;
+            }
+        }
+    }
+
+    @include media(550px) {
+        &-item {
+            width: 25rem;
+            height: 45rem;
+        }
+        &-name {
+            font: {
+                size: $font-size-xs;
+            }
+        }
+        &-description {
+            font: {
+                size: $font-size-xxs;
+            }
+        }
+    }
+}

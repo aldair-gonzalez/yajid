@@ -1,0 +1,69 @@
+.Insta {
+    width: 100%;
+    overflow: hidden;
+    &-wrapper {}
+    &-title {
+        margin-bottom: 3rem;
+        text-align: center;
+        font: {
+            family: $font-primary;
+            weight: 900;
+            size: $font-size-xl;
+        }
+    }
+    &-feed {
+        width: 100%;
+
+        @include grid(4, $margin-cards-m);
+    }
+    &-item {
+        width: 100%;
+        overflow: hidden;
+
+        position: relative;
+    }
+    &-image {
+        width: 100%;
+        height: 100%;
+    }
+    &-img {
+        object-fit: cover;
+    }
+    &-content {
+        background: $color-negro-5;
+        color: $color-blanco;
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include flex(column, nowrap, center, center);
+
+        transition: all .3s ease;
+
+        opacity: 0;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    @include media(800px) {
+        &-feed {
+            @include grid(2, $margin-cards-m);
+        }
+    }
+    @include media(480px) {
+        &-title {
+            font: {
+                size: $font-size-l;
+            }
+        }
+    }
+}

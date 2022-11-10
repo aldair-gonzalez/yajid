@@ -1,0 +1,102 @@
+.Packets {
+    width: 100%;
+    overflow: hidden;
+    &-wrapper {}
+    &-grid {
+        width: 100%;
+        @include grid(3, $margin-cards-m);
+    }
+    &-item {
+        width: 100%;
+        height: 60rem;
+        overflow: hidden;
+
+        position: relative;
+
+        &:hover {
+            .Packets-line {
+                padding: 1px 3rem;
+            }
+            .Packets-info {
+                background: $color-negro-5;
+            }
+            .Packets-title {
+                gap: 1rem;
+            }
+        }
+    }
+    &-image {
+        width: 100%;
+        height: 100%;
+    }
+    &-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &-info {
+        background: $color-negro-3;
+        color: $color-blanco;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        padding: 2.5rem;
+
+        @include flex(column, nowrap, space-between, flex-start);
+
+        transition:
+            background .3s ease,
+        ;
+    }
+    &-title {
+        width: 100%;
+        @include flex(row, nowrap, flex-start, center);
+    }
+    &-line {
+        background: $color-blanco;
+        padding: 1px 0;
+
+        transition:
+            padding .3s ease,
+        ;
+    }
+    &-h3 {
+        font: {
+            family: $font-primary;
+            size: 2.5rem;
+            weight: 600;
+        }
+    }
+    &-more {
+        width: 100%;
+        @include flex(row, nowrap, flex-end, center);
+    }
+    &-button {
+        padding: 1rem 2rem;
+        outline: 2px solid $color-blanco;
+        cursor: pointer;
+        
+        transition:
+            background .3s ease,
+            color .3s ease,
+        ;
+        
+        &:hover {
+            background:$color-blanco;
+            color: $color-negro;
+        }
+    }
+
+    @include media(900px) {
+        &-grid {
+            @include grid(1, $margin-cards-m);
+        }
+        &-item {
+            height: 25rem;
+        }
+    }
+}

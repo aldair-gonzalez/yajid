@@ -1,0 +1,114 @@
+.Drawer {
+    background: $color-negro-5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 6;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    @include grid(2,0);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 
+        opacity .3s ease,
+    ;
+
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
+
+        .Drawer-content {
+            transform: translateX(0);
+            overflow-y: scroll;
+            ::-webkit-scrollbar {
+                display: none;
+            }
+            ::-webkit-scrollbar-thumb {
+                display: none;
+            }
+        }
+    }
+    
+    &-exit {
+        cursor: pointer;
+    }
+    &-content {
+        background: $color-blanco;
+        padding: 2rem;
+        
+        border-left: .5rem solid $color-negro;
+        transform: translateX(50%);
+
+        transition:
+            transform .3s ease,
+        ;
+    }
+    &-wrapper {
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+
+        &::-webkit-scrollbar {
+            width: .5rem;
+        }
+    }
+    &-header {
+        width: 100%;
+        padding-bottom: 2rem;
+        @include flex(row, nowrap, space-between, center);
+        gap: 2rem;
+
+        border-bottom: 2px solid $color-negro-5;
+    }
+    &-backBtn {
+        cursor: pointer;
+        &:hover {
+            color: $color-negro-5;
+        }
+    }
+    &-backIcon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    &-title {
+        font: {
+            family: $font-primary;
+            weight: 900;
+            size: $font-size-m;
+        }
+    }
+    &-text {
+        margin: 2rem 0;
+        font: {
+            weight: 400;
+            size: $font-size-xxs;
+        }
+        &--a {
+            color: $color-durazno;
+            &:hover {
+                color: $color-durazno-5;
+            }
+        }
+    }
+    &-body {
+        width: 100%;
+    }
+    &-empty {
+    }
+
+    @include media(800px) {
+        @include grid(1, 0);
+        &-exit {
+            display: none;
+        }
+        &-content {
+            border: .5rem solid $color-negro;
+        }
+    }
+}
