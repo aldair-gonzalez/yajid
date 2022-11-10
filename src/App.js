@@ -14,7 +14,7 @@ import Navbar from "./components/navbar/Index";
 function App() {
 	return (
 		<>
-			<Router>
+			<Router basename="/yajid">
 				<Navbar/>
 				<Routes>
 					<Route path="/" element={<Intro/>}/>
