@@ -1,7 +1,6 @@
 import SliderCards from "../sliderCards/Index";
 import TextAnimated from "../textAnimated/Index";
 
-import video from "../../assets/video/video.mp4";
 import Packets from "./Packets";
 import Published from "./Published";
 import Insta from "./Insta";
@@ -22,7 +21,7 @@ function Intro() {
         <div className="Intro-wrapper Wrapper">
           <div className="Intro-frame">
             <video autoPlay muted loop className="Intro-video">
-              <source src={video} type="video/mp4" />
+              <source src="/assets/video/video.mp4" type="video/mp4" />
               Tu navagador no soporta el elemento <code>video</code>.
             </video>
           </div>

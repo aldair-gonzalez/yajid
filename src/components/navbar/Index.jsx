@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 
-// Iconos
-import LogoPng from "../../assets/img/logo/logo.png";
 import CartButton from "./CartButton";
 
 function Navbar() {
@@ -60,7 +58,7 @@ function Navbar() {
               <Link className="Header-logoLink" to="/" title="Super Yajid">
                 <img
                   className="Header-logoImg"
-                  src={LogoPng}
+                  src="/assets/img/logo/logo.png"
                   alt="Super Yajid"
                 />
               </Link>
