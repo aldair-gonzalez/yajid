@@ -21,7 +21,7 @@ function Intro() {
         <div className="Intro-wrapper Wrapper">
           <div className="Intro-frame">
             <video autoPlay muted loop className="Intro-video">
-              <source src="/assets/video/video.mp4" type="video/mp4" />
+              <source src="./assets/video/video.mp4" type="video/mp4" />
               Tu navagador no soporta el elemento <code>video</code>.
             </video>
           </div>

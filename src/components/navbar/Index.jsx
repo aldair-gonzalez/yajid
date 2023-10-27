@@ -58,7 +58,7 @@ function Navbar() {
               <Link className="Header-logoLink" to="/" title="Super Yajid">
                 <img
                   className="Header-logoImg"
-                  src="/assets/img/logo/logo.png"
+                  src="./assets/img/logo/logo.png"
                   alt="Super Yajid"
                 />
               </Link>
